@@ -7,7 +7,7 @@ export async function POST(
   req: Request
 ) {
     const cred = await req.json();
-    const response = await fetch('http://admap-api.auroravapes.ca/api/v1/auth/login', {
+    const response = await fetch(`${process.env.API_URI}/auth/login`, {
         method: 'POST',
         body: JSON.stringify(cred),
         headers: {
