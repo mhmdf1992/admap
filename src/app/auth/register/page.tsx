@@ -2,10 +2,11 @@
 import IFormInput, { FormValidator } from '@/form-validator';
 import { IApiResponse } from '@/types/api-response';
 import { ILoginResponseData } from '@/types/login-response';
-import Link from 'next/link'
+import Link from 'next/link';
+import Image from 'next/image';
 import { redirect } from 'next/navigation';
 import { FormEvent, useState } from 'react';
-const register = () => {
+const Register = () => {
     const [error, setError] = useState('');
     const validations: IFormInput[] = [
         {
@@ -50,7 +51,7 @@ const register = () => {
     return (
         <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
             <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-                <img
+                <Image
 					alt="Your Company"
 					src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
 					className="mx-auto h-10 w-auto"
@@ -96,4 +97,4 @@ const register = () => {
         </div>
     )
 }
-export default register;
+export default Register;

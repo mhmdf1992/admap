@@ -5,7 +5,8 @@ import { redirect } from 'next/navigation';
 import Link from 'next/link'
 import { FormEvent, useState } from 'react'
 import IFormInput, { FormValidator } from '@/form-validator';
-const login = () => {
+import Image from 'next/image';
+const Login = () => {
 	const [error, setError] = useState('');
 	const validations: IFormInput[] = [
 		{
@@ -48,7 +49,7 @@ const login = () => {
     return (
 		<div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
 			<div className="sm:mx-auto sm:w-full sm:max-w-sm">
-				<img
+				<Image
 					alt="Your Company"
 					src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
 					className="mx-auto h-10 w-auto"
@@ -122,4 +123,4 @@ const login = () => {
 		</div>
 	)
 }
-export default login;
+export default Login;

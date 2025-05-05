@@ -1,6 +1,5 @@
 import { IApiResponse } from '@/types/api-response';
 import { ILoginResponseData } from '@/types/login-response';
-import { redirect } from 'next/navigation';
 import { cookies } from 'next/headers';
 import { NextResponse } from 'next/server';
  
