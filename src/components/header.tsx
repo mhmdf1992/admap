@@ -13,13 +13,18 @@ const Header = () => {
         <nav className="bg-white shadow-md">
         <div className="max-w-7xl mx-auto flex justify-between items-center p-4">
             <Link href="/" className="text-2xl font-bold">
-            Logo
+                <img
+                    alt="Your Company"
+                    src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
+                    className="mx-auto h-10 w-auto"
+                />
             </Link>
             <button className="md:hidden" onClick={() => setNavOpen(!navOpen)}>
             <FontAwesomeIcon icon={navOpen ? faTimes : faBars} />
             </button>
             <div className={`flex-col md:flex md:flex-row ${navOpen ? 'flex' : 'hidden'} md:flex`}>
-            <Link href="/" className="p-2">Home</Link>
+            <Link href="/" className="p-2 menu-item">Home</Link>
+            <Link href="/ads" className="p-2 menu-item">Ads</Link>
             <button className="bg-blue-500 text-white px-4 py-2 rounded" onClick={
                 () => fetch('/api/auth/logout', {
                     method: 'POST'
