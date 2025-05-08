@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "../globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import { IJWTPayload } from "@/types/jwt-payload";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,7 +19,7 @@ export default function RootLayout({
       <html lang="en">
         <body>
           <Header />
-          <main className="flex-grow min-h-100 mt-10 mb-10">
+          <main className="flex-grow min-h-150 mt-10 mb-10">
             {children}
           </main>
           <Footer />

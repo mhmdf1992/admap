@@ -2,7 +2,8 @@ export interface IAdItem{
     _id: string;
     title: string;
     description: string;
-    location: string;
+    country: string;
+    city: string;
     price: number;
     currency: string;
     category: string;
@@ -13,7 +14,7 @@ export interface IAdItem{
     updated_on?: Date;
 }
 export enum AdStatus{
-    Pending = 0,
-    Approved = 1,
-    Regected = 2
+    Pending = 1,
+    Approved = 2,
+    Rejected = 3
 }

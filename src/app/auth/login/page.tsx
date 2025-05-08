@@ -1,11 +1,12 @@
 "use client";
 import { IApiResponse } from '@/types/api-response';
 import { ILoginResponseData } from '@/types/login-response';
-import { redirect } from 'next/navigation';
 import Link from 'next/link'
 import { FormEvent, useState } from 'react'
 import IFormInput, { FormValidator } from '@/form-validator';
 import Image from 'next/image';
+import { jwtDecode } from 'jwt-decode';
+import { IJWTPayload } from '@/types/jwt-payload';
 const Login = () => {
 	const [error, setError] = useState('');
 	const validations: IFormInput[] = [
@@ -43,13 +44,17 @@ const Login = () => {
 				setError(result.message);
 				return;
 			}
-			redirect('/');
+			const payload = jwtDecode(result.data.token ?? '') as IJWTPayload;
+			localStorage.setItem('me', JSON.stringify(payload));
+			window.location.href = '/';
 		})
 	}
     return (
 		<div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
 			<div className="sm:mx-auto sm:w-full sm:max-w-sm">
 				<Image
+					height={10}
+					width={1}
 					alt="Your Company"
 					src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
 					className="mx-auto h-10 w-auto"
