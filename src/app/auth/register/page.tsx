@@ -4,7 +4,6 @@ import { IApiResponse } from '@/types/api-response';
 import { ILoginResponseData } from '@/types/login-response';
 import Link from 'next/link';
 import Image from 'next/image';
-import { redirect } from 'next/navigation';
 import { FormEvent, useState } from 'react';
 import { jwtDecode } from 'jwt-decode';
 import { IJWTPayload } from '@/types/jwt-payload';

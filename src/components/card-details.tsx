@@ -1,5 +1,5 @@
 import { AdStatus, IAdItem } from "@/types/ad-item";
-import { FormEvent, useEffect } from "react";
+import { FormEvent } from "react";
 
 const CardDetails = ({ad, onsubmit, ondelete, onaprove, onreject, success, error, isadmin} : {ad? : IAdItem, onsubmit: (event: FormEvent<HTMLFormElement>) => void, ondelete: () => void, onaprove: () => void, onreject: () => void, success?: string, error?: string, isadmin?: boolean}) => {
     const adStatusMsg = {

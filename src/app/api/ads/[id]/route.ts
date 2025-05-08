@@ -1,7 +1,4 @@
-import { AdStatus } from '@/types/ad-item';
-import { IJWTPayload } from '@/types/jwt-payload';
 import { IUpdateStatus } from '@/types/update-status';
-import { jwtDecode } from 'jwt-decode';
 import { cookies } from 'next/headers';
 import { NextResponse } from 'next/server';
  

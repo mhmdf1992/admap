@@ -19,9 +19,7 @@ export async function POST(
       const result = await response.json();
       return NextResponse.json(result, {status: response.status});
   }
-  export async function GET(
-    req: Request
-  ) {
+  export async function GET() {
       const cookieStore = await cookies();
       const token = cookieStore.get('access_token')?.value;
       const payload = jwtDecode(token ?? '') as IJWTPayload;
